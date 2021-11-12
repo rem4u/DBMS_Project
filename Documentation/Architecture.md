@@ -1,49 +1,72 @@
-USER AUTHENTICATION
+Frontend :-
+Login Page 
+Register Page 
+Home Page 
+About Companies Page 
+Share your thoughts page
+Job offers page - both internships and Job offers
+
+Login Page :- 
 
 
-LOGIN
-
--> User login
+Register Page :-
 
 
--> Admin login 
+Home Page :-
 
 
-
-REGISTER
-
-
-->User register 
+About Companies Page :-
 
 
-TYPES OF PAGES
+Share your thoughts page :-
 
 
--> Home page 
-
-
--> Separate section of present openings in campanies (internship + fulltime )
-
-
--> Blogs where he can post his success story , references, materials etc
-
-
--> Has a separate page for verified users. These category of verified users are those who are a part of campanies and having experience to share how he have cracked that campany.    They can write articles of their selection process and how did the interview took place
-
-
--> A seperate section of todo task for the students
+Job offers Page :-
 
 
 
-BACKEND
 
 
--> Will be creating a server that runs our website , where we take the requests  made from the client side ,  we will also be storing the data in database which is connected to the server
+Backend Server :- 
+
+/Login (post request ) :-
+  Username and the password are requested , and if the Username and the Password are correct then takes us to the Home Page.
+
+/register
+ Username , password and email id server to create for the new users 
+
+/Home(get request) :-
+ Takes us to the home page of the website where , we have the navigation bar . Contents in the Navbar include - Home , About Companies , Upcoming Job Offers, new post , My 
+
+account and logout . Below the Navbar we have the posts made by the other users in the platform
 
 
-DATABASE
+/aboutcompanies :-
+ Takes us to the page which contains the list of the following necessary :-
+Which company hires when 
+Companies that hire through hackathon
+Companies that hire through coding competitions 
+Salaries of companies 
+Past experience 
 
 
+/newpost
+Here you will add post which will be displayed on others users page
 
-Will be creating tables to store , 
-Username , ID , Name , passout year , campany/ college , email id
+/account 
+Personal information of the user 
+
+/logout 
+
+
+Database :- 
+
+User Data base:- 
+Name 
+Email ID
+Password
+
+Companies data base :-
+Company name 
+Position they offer
+Salary
