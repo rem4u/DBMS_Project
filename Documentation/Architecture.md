@@ -1,142 +1,27 @@
-Frontend :-
-
-
-Login Page
-
-
-Register Page
-
-
-Home Page 
-
-
-About Companies Page
-
-
-Share your thoughts page
-
-
-Job offers page - both internships and Job offers
-
-
-
-Login Page :- 
-
-
-Register Page :-
-
-
-Home Page :-
-
-
-About Companies Page :-
-
-
-Share your thoughts page :-
-
-
-Job offers Page :-
-
-
-
-
-
-Backend Server :- 
-
-
-
-/Login (post request ) :-
-
-
-  Username and the password are requested , and if the Username and the Password are correct then takes us to the Home Page.
-  
-  
-
-/register
-
-
- Username , password and email id server to create for the new users
- 
- 
-
-/Home(get request) :-
-
-
- Takes us to the home page of the website where , we have the navigation bar . Contents in the Navbar include - Home , About Companies , Upcoming Job Offers, new post , My 
- 
- 
-
-account and logout . Below the Navbar we have the posts made by the other users in the platform
-
-
-/aboutcompanies :-
-
-
- Takes us to the page which contains the list of the following necessary :-
- 
- 
-Which company hires when 
-
-
-Companies that hire through hackathon
-
-
-Companies that hire through coding competitions 
-
-
-Salaries of companies 
-
-
-Past experience 
-
-
-
-
-/newpost
-
-
-Here you will add post which will be displayed on others users page
-
-
-
-/account 
-
-
-Personal information of the user 
-
-
-
-/logout 
-
-
-
-
-Database :- 
-
-
-
-User Data base:- 
-
-
-Name 
-
-
-Email ID
-
-
-Password
-
-
-
-Companies data base :-
-
-
-Company name
-
-
-Position they offer
-
-
-Salary
-
-
+**FRONTEND **
+  - Login Page 
+  - Register Page 
+  - Home Page 
+  - New Post page :- this is the page where users can share/post their thoughts , their resources etc
+  - Companies Page :- this is the informatory page about all the companies.
+  - User Account :- this page is his user profile , where user can view his profile 
+  - Companies Hiring now Page :- which shows the current open positions in all the companies 
+
+**BACKEND**
+   -  /login :- for the login page 
+   -  /register :- for the register page
+   -  /home :- for the home page
+   -  /newpost :- where users can post their views 
+   -  /companies :- information about the companies
+   -  /userinfo :- information about the user
+   -  /openings :- company opening for both Internships and FTE  
+
+**DATABASE**
+   - USER DETAILS :- name , username , password , collegename , yearofpassout
+   - USER POSTS :- title , post
+   - COMPANIES :- name , dateofapplication
+   - USEREXPERIENCE :- campanyname , salary , interviewexperience
+
+
+
+![project](https://user-images.githubusercontent.com/32356793/141524967-95c810e9-0682-486b-8df6-01f1b00ab7ec.png)
