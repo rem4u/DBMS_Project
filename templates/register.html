@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='index.css') }}">
+  </head>
+  <body>
+    <div class="center">
+      <h1>Register</h1>
+      <form method="post" action="/add_user">
+        <div class="txt_field">
+          <input type="text" name ="name" required>
+          <span></span>
+          <label>Name</label>
+        </div>
+        <div class="txt_field">
+          <input type="email" name="email" required>
+          <span></span>
+          <label>email</label>
+        </div>
+        <div class="txt_field">
+            <input type="password" name="password" required>
+            <span></span>
+            <label>password</label>
+          </div>
+        <div class="txt_field">
+            <input type="text" name="college" required>
+            <span></span>
+            <label>College</label>
+          </div>
+
+        <div class="pass"></div>
+        <input type="submit" value="Register">
+        <div class="signup_link">
+          Already a Member? <a href="/">Login</a>
+        </div>
+      </form>
+    </div>
+
+  </body>
+</html>

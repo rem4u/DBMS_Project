@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="utf-8">
+   <title>Home Page</title>
+   <link rel="stylesheet" href="style.css">
+   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+   <link rel="stylesheet" href="{{ url_for('static',filename='viewexp.css') }}"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+   <nav>
+      <ul>
+         <li class="logo">One-Stop</li>
+         <li class="items"><a href="/home">Home</a></li>
+         <li class="items"><a href="/shareexp">Share Exp</a></li>
+         <li class="items"><a href="/viewexp">View Exp</a></li>
+         <li class="items"><a href="/help">Help Others</a></li>
+         <li class="items"><a href="/hiringnow">Hiring Now</a></li>
+         <li class="items"><a href="/logout">Logout</a></li>
+         <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
+      </ul>
+   </nav>
+<h1 style="text-align: center;color: rgb(28, 78, 128);margin-top: 10px;">latest JOB openings Here</h1>
+
+ {% for post in posts %}
+ <form method="POST">
+    <div class="container">
+        <h2 style="margin-left: 30px; text-align: left;margin-top: 30px;color: rgb(0, 0, 0); font-size: 19px;">Company NAME :<p1 style="font-size: 16px;color: salmon;"> {{post[1]}}</p1></h2>
+
+        <h2 style="margin-left: 30px; text-align: left;margin-top: 30px;color: rgb(0, 0, 0); font-size: 19px;">Role Offered :<p1 style="font-size: 16px;color: rgb(39, 62, 66);"> {{post[2]}}</p1></h2>
+
+        <h2 style="margin-left: 30px; text-align: left;margin-top: 30px;color: rgb(0, 0, 0); font-size: 19px;">Requirement :<p1 style="font-size: 16px;color: rgb(39, 55, 70);"> {{post[3]}}</p1></h2>
+
+        <h2 style="margin-left: 30px; text-align: left;margin-top: 30px;color: rgb(0, 0, 0); font-size: 19px;">LINK :<p1 style="font-size: 16px;color: rgb(37, 70, 78);"> {{post[4]}}</p1></h2>
+
+        <h2 style="margin-left: 30px; text-align: left;margin-top: 30px;color: rgb(0, 0, 0); font-size: 19px;">Post By :<p1 style="font-size: 16px;color: rgb(68, 38, 34);"> {{post[5]}}</p1></h2>
+
+        <br>
+       <a style="color: rgb(0, 17, 255);margin-left: 30px;font-size: 15px;" href={{url_for('edit_helpother',id=post[0])}}>Edit</a> &nbsp;&nbsp;&nbsp;&nbsp;<a style="color: rgb(206, 54, 54);font-size: 15px;" href={{url_for('delete_helpother',id=post[0])}}>Delete</a> 
+        <br>
+        <br>
+       <hr>
+    </div>
+</form>
+    {% endfor %}
+  
+ 
+   <script>
+      $(document).ready(function(){
+        $('.btn').click(function(){
+          $('.items').toggleClass("show");
+          $('ul li').toggleClass("hide");
+        });
+      });
+      const textarea = document.querySelector("textarea");
+      textarea.addEventListener("keyup", e =>{
+        textarea.style.height = "63px";
+        let scHeight = e.target.scrollHeight;
+        textarea.style.height = `${scHeight}px`;
+      });
+   </script>
+</body>
+</html>

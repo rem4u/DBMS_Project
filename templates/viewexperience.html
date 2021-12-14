@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="utf-8">
+   <title>Home Page</title>
+   <link rel="stylesheet" href="style.css">
+   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+   <link rel="stylesheet" href="{{ url_for('static',filename='viewexp.css') }}"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+   <nav>
+      <ul>
+         <li class="logo">One-Stop</li>
+         <li class="items"><a href="/home">Home</a></li>
+         <li class="items"><a href="/shareexp">Share Exp</a></li>
+         <li class="items"><a href="/viewexp">View Exp</a></li>
+         <li class="items"><a href="/help">Help Others</a></li>
+         <li class="items"><a href="/hiringnow">Hiring Now</a></li>
+         <li class="items"><a href="/logout">Logout</a></li>
+         <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
+      </ul>
+   </nav>
+
+<!--   
+   {% for post in posts %}
+   <form>
+       <div class="v1">
+   <header class="masthead">
+       <div class="container position-relative px-4 px-lg-5">
+           <div class="row gx-4 gx-lg-5 justify-content-center">
+               <div class="col-md-10 col-lg-8 col-xl-7">
+                   <div class="post-heading">
+                       <h1>{{post[1]}}</h1>
+                       <h2 class="subheading">{{post[3]}}</h2>
+                       <span class="meta">
+                           Added by
+                           <a href=''>{{post[3]}}</a>
+                           
+                       </span>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </header>
+ 
+   <article class="mb-4">
+       <div class="container px-4 px-lg-5">
+           <div class="row gx-4 gx-lg-5 justify-content-center">
+               <div class="col-md-10 col-lg-8 col-xl-7">
+                   {{post[2]}}
+               </div>
+               <button style="color:#4671EA"> Edit </button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button style="color:#4671EA"> Delete </button> 
+           </div>
+       </div>
+   </article>
+</div>
+   </form>
+   {% endfor %} -->
+<!-- 
+   <div class="view">
+    <div class="v1">
+        
+        <button style="color:#4671EA"> Edit </button>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button style="color: #4671EA;"> Delete </button>
+      </div>
+    
+
+ </div> -->
+ <br>
+ <br>
+ <h1 style="color:#546daf;text-align: center;">View Experiences here</h1>
+ {% for post in posts %}
+ <form method="POST">
+    <div class="container">
+        <h2 style="margin-left: 30px; text-align: left;margin-top: 30px;color: rgb(0, 0, 0); font-size: 19px;">Company NAME :<p1 style="font-size: 16px;color: salmon;"> {{post[1]}}</p1></h2>
+        <h2 style="margin-left: 30px; text-align: left;margin-top: 30px;color: rgb(0, 0, 0);font-size: 19px;">EXPERIENCE :<p1 style="font-size: 16px;color: rgb(71, 87, 104);"> {{post[2]}}</p1></h2>
+        <h2 style="margin-left: 30px; text-align: left;margin-top: 30px;color: rgb(0, 0, 0);font-size: 19px;">POST BY:<p1 style="font-size: 16px;color: rgb(66, 84, 102);"> {{post[3]}}</p1></h2>
+        <br>
+       <a style="color: rgb(0, 37, 250); margin-left: 34px;font-size: 15px;"  href={{url_for('edit_user_experience',id=post[0])}}>Edit</a> &nbsp;&nbsp;&nbsp;&nbsp;<a style="color: rgb(245, 1, 1);font-size: 15px;" href={{url_for('delete_user_experience',id=post[0])}}>Delete</a> 
+        <br>
+        <br>
+       <hr>
+    </div>
+</form>
+    {% endfor %}
+  
+ 
+   <script>
+      $(document).ready(function(){
+        $('.btn').click(function(){
+          $('.items').toggleClass("show");
+          $('ul li').toggleClass("hide");
+        });
+      });
+      const textarea = document.querySelector("textarea");
+      textarea.addEventListener("keyup", e =>{
+        textarea.style.height = "63px";
+        let scHeight = e.target.scrollHeight;
+        textarea.style.height = `${scHeight}px`;
+      });
+   </script>
+</body>
+</html>

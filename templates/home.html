@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<head>
+   <meta charset="utf-8">
+   <title>Home Page</title>
+   <link rel="stylesheet" href="style.css">
+   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+   <link rel="stylesheet" href="{{ url_for('static',filename='home.css') }}"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <nav>
+      <ul>
+         <li class="logo"><a href="/home"></a>One-Stop</li>
+         <li class="items"><a href="/home">Home</a></li>
+         <li class="items"><a href="/shareexp">Share Exp</a></li>
+         <li class="items"><a href="/viewexp">View Exp</a></li>
+         <li class="items"><a href="/help">Help Others</a></li>
+         <li class="items"><a href="/hiringnow">Hiring Now</a></li>
+         <li class="items"><a href="/logout">Logout</a></li>
+         <li class="btn"><a href=""><i class="fas fa-bars"></i></a></li>
+      </ul>
+   </nav>
+</head>
+<body>
+   <!-- <nav>
+      <ul>
+         <li class="logo">One-Stop</li>
+         <li class="items"><a href="#">Home</a></li>
+         <li class="items"><a href="/shareexp">Share Exp</a></li>
+         <li class="items"><a href="/viewexp">View Exp</a></li>
+         <li class="items"><a href="/help">Help Others</a></li>
+         <li class="items"><a href="/hiringnow">Hiring Now</a></li>
+         <li class="items"><a href="/logout">Logout</a></li>
+         <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
+      </ul>
+   </nav> -->
+   <h1 style="text-align: center;margin-top: 300px; color: #4e4e4e; font-size: 100px;">One Stop </h1>
+ <p1  style="color: #4671ea;; font-size: 40px;text-align: center;margin-left: 750px; ">Explore and Enjoy !!</p1>
+ 
+
+  
+
+   <script>
+      $(document).ready(function(){
+        $('.btn').click(function(){
+          $('.items').toggleClass("show");
+          $('ul li').toggleClass("hide");
+        });
+      });
+   </script>
+</body>
+</html>

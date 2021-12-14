@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="utf-8">
+   <title>Home Page</title>
+   <link rel="stylesheet" href="style.css">
+   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+   <link rel="stylesheet" href="{{ url_for('static',filename='viewexp.css') }}"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    {% if temp2 %}
+<form action="{{ url_for('edit_user_expe_submit',id=temp2) }}" method="POST">
+   <div class="view">
+    <div class="v1">
+        <p1 style="color: #4671ea;">Edit the company name</p1>
+        <textarea name="companyname" spellcheck="false" placeholder="Type something here..." required></textarea>
+        <br>
+        <br>
+        
+        <p1 style="color: #4671ea;">Oops, made a mistake ?? change your experience</p1>
+        <textarea  name="experience"  spellcheck="false" placeholder="Type something here..." required></textarea>
+        <br>
+        <br>
+        <button style="color:#4671EA"> Submit </button>
+        
+      </div>
+    
+
+ </div>
+</form>
+{% endif %}
+  
+ 
+   <script>
+      $(document).ready(function(){
+        $('.btn').click(function(){
+          $('.items').toggleClass("show");
+          $('ul li').toggleClass("hide");
+        });
+      });
+      const textarea = document.querySelector("textarea");
+      textarea.addEventListener("keyup", e =>{
+        textarea.style.height = "63px";
+        let scHeight = e.target.scrollHeight;
+        textarea.style.height = `${scHeight}px`;
+      });
+   </script>
+</body>
+</html>

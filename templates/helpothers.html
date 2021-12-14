@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="utf-8">
+   <title>Home Page</title>
+   <link rel="stylesheet" href="style.css">
+   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+   <link rel="stylesheet" href="{{ url_for('static',filename='viewexp.css') }}"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+   <nav>
+      <ul>
+         <li class="logo">One-Stop</li>
+         <li class="items"><a href="/home">Home</a></li>
+         <li class="items"><a href="/shareexp">Share Exp</a></li>
+         <li class="items"><a href="/viewexp">View Exp</a></li>
+         <li class="items"><a href="/help">Help Others</a></li>
+         <li class="items"><a href="/hiringnow">Hiring Now</a></li>
+         <li class="items"><a href="/logout">Logout</a></li>
+         <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
+      </ul>
+   </nav>
+   <br>
+   <br>
+   <h1 style="text-align: center;color: rgb(66, 66, 66);" >Post Job Openings here</h1>
+   <br>
+   <br>
+   <br>
+   <form action="/help_others" method="POST">
+   <div class="view">
+    <div class="v1">
+        <p1 style="color: #4671ea;">Name of Company</p1>
+        <textarea  name="companyn" spellcheck="false" placeholder="Type something here..." required></textarea>
+        <br>
+        <br>
+        
+        <p1 style="color: #4671ea;">Role Offering</p1>
+        <textarea  name="roleoffer"  spellcheck="false" placeholder="Type something here..." required></textarea>
+        <br>
+        <br>
+        <p1 style="color: #4671ea;">Requirement</p1>
+        <textarea   name="requirement" spellcheck="false" placeholder="Type something here..." required></textarea>
+        <br>
+        <br>
+        <p1 style="color: #4671ea;">Link</p1>
+        <textarea   name="link"   spellcheck="false" placeholder="Type something here..." required></textarea>
+        <br>
+        <br>
+        <button style="color:#4671EA"> Submit </button>
+      </div>
+    
+
+ </div>
+</form>
+ 
+   <script>
+      $(document).ready(function(){
+        $('.btn').click(function(){
+          $('.items').toggleClass("show");
+          $('ul li').toggleClass("hide");
+        });
+      });
+      const textarea = document.querySelector("textarea");
+      textarea.addEventListener("keyup", e =>{
+        textarea.style.height = "63px";
+        let scHeight = e.target.scrollHeight;
+        textarea.style.height = `${scHeight}px`;
+      });
+   </script>
+</body>
+</html>
