@@ -2,27 +2,22 @@
   - Login Page 
   - Register Page 
   - Home Page 
-  - New Post page :- this is the page where users can share/post their thoughts , their resources etc
-  - Companies Page :- this is the informatory page about all the companies.
-  - User Account :- this page is his user profile , where user can view his profile 
-  - Companies Hiring now Page :- which shows the current open positions in all the companies 
-
+  - Share Exp :- this is the page where users can share their interview experiences. One user can add as many experiences he have attented
+  - View Exp  :- this is the page where  all the users experience will be displayed, who are registered in this website
+  - Help Others :- This is the page , where one can can post the latest openings in the companies, so that it will help the other users in the platform to get the opportunities. 
+  - Hiring now :- This page displays the jobs which the users have posted in the website through help others page. Every user who have registered inside the website can view the companies that are Hiring 
+  - 
 **BACKEND**
-   -  /login :- for the login page 
-   -  /register :- for the register page
-   -  /home :- for the home page
-   -  /newpost :- where users can post their views 
-   -  /companies :- information about the companies
-   -  /userinfo :- information about the user
-   -  /openings :- company opening for both Internships and FTE  
+   -  /login :- route for the login page 
+   -  /register :- route for the register page
+   -  /home :- route for the home page
+   -  /shareexp :- route where the user can share his personal interview experience
+   -  /viewexp :- route where users can view experiences posted by the registered users
+   -  /help :-  user can post the latest job openings
+   -  /hiringnow :- company opening for both Internships and FTE  
 
 **DATABASE**
-   - USER DETAILS :- name , username , password , collegename , yearofpassout
-   - USER POSTS :- title , post
-   - COMPANIES :- name , dateofapplication
-   - USEREXPERIENCE :- campanyname , salary , interviewexperience
+   - register table :- name , email , password , college
+   - help_others table :- name(name of the company) , role , requirement , link , userid
+   - user_experience :- name , experience , userid
 
-
-**Overview of our project**
-
-![project](https://user-images.githubusercontent.com/32356793/141524967-95c810e9-0682-486b-8df6-01f1b00ab7ec.png)
